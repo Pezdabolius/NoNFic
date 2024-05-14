@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body{
+    font-family: 'cinzel', serif;
+}
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    transition: 0.5s;
+}
+
+.links-container{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.link-item{
+    margin: 10px;
+}
+
+.link{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    opacity: 0.7;
+    transition: 0.5s
+}
+
+.link.active, .link:hover{
+    opacity: 1;
+}
+
+.user-interactions{
+    display: flex;
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cart, .user{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.cart-icon, .user-icon{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-count{
+    font-family: 'lato', sans-serif;
+    color: #d5be8b;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 50%;
+    background: black;
+    position; absolute;
+    bottom: -12px;
+    left: -12px;
+}
+
+.header-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: url(../img/head3.jpg);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-heading{
+    font-size: 100px;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.header-heading span{
+    color: #d5be8b;
+}
+
+.best-selling-product-section{
+    position: relative;
+    padding: 60px 5vw;
+}
+
+.section-title{
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.product-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-img{
+    width: 90%;
+    height: 90%;
+}
+
+.product-name, a{
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    transition: .5s;
+}
+

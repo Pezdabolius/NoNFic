@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-
+    <link rel="stylesheet" href="{% static 'static_files/css/product.css' %}">
     <link rel="stylesheet" href="{% static 'static_files/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'static_files/css/search-listing.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <nav class="navbar">
         <ul class="links-container">
             <li class="link-item"><a href="{% url 'home' %}" class="link active">Home</a></li>
             <li class="link-item"><a href="{% url 'products_list' %}" class="link">Shop</a></li>
+            <li class="link-item"><h1 class="header-heading"><span>Non</span>Fic</h1></li>
             <li class="link-item"><a href="#" class="link">About</a></li>
             <li class="link-item"><a href="#" class="link">Contact</a></li>
         </ul>
@@ -29,6 +30,9 @@
             </div>
         </div>
     </nav>
+
+    <script src="{% static 'static_files/js/home.js' %}"></script>
+    <script src="{% static 'static_files/js/product.js' %}"></script>
 
     <div>
         {% block content %}

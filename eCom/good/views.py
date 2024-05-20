@@ -4,9 +4,9 @@ from django.core.paginator import Paginator
 
 
 def best_selling(request):
-    products = Product.objects.filter(available=True)
+    products = Product.objects.filter(available=True)[:6]
     return render(request, 'home/home.html',
-                  {products: 'products'})
+                  {'products': products})
 
 
 def products_list(request, slug=None):
@@ -19,14 +19,13 @@ def products_list(request, slug=None):
     if slug:
         category = get_object_or_404(Category, slug=slug)
         products = products.filter(category=category)
-    return render(request, 'home/list.html',
+    return render(request, 'home/list_products.html',
            {'category': category,
             'categories': categories,
             'products': products})
 
 
-def product_detail(request, id, slug):
-    product = get_object_or_404(Product, id=id,
-                                slug=slug, available=True)
-    return render(request, 'home/goods/detail.html',
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug, available=True)
+    return render(request, 'home/detail_product.html',
            {'product': product})

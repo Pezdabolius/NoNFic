@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+    <header class="header-detail"></header>
+
+    <section class="product-section">
+        <img src="{{ product.image.url }}" class="product-image" alt="">
+        <div class="product-detail">
+            <h1 class="product-title">{{ product.name }}</h1>
+            {% if product.information %}
+                <p class="product-inf">
+                    Book info:
+                    <p>{{ product.information }}<p>
+                </p>
+            {% endif %}
+            <p class="price">${{ product.price }}</p>
+            <div class="btn-container">
+                <button class="product-btn buy-btn">Buy now</button>
+                <button class="product-btn cart-btn">Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-des">
+        <h1 class="title-des">Introduction</h1>
+        <p class="des">{{ product.description }}</p>
+    </section>
+
+    <section class="add-review-section">
+        <h1 class="title-rev">Add a review</h1>
+        <input type="text" class="review-headline" placeholder="review headline">
+        <textarea placeholder="review" class="review-field"></textarea>
+        <p><button class="add-review-btn">add review</button></p>
+    </section>
+
+{% endblock %}

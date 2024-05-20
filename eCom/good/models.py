@@ -24,10 +24,11 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='products')
     name = models.CharField(max_length=50)
-    slug = models.SlugField(max_length=50)
-    description = models.TextField(max_length=1000)
+    slug = models.SlugField(max_length=50, unique=True)
+    information = models.TextField(max_length=500, blank=True)
+    description = models.TextField(max_length=1200)
     available = models.BooleanField(default=True)
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     image = models.ImageField()
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
@@ -39,4 +40,4 @@ class Product(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=[self.id, self.slug])
+        return reverse('product_detail', args=[self.slug])

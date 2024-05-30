@@ -1,0 +1,31 @@
+{% extends 'base_account.html' %}
+{% load static %}
+
+{% block title %}Sing-in{% endblock %}
+
+{% block content %}
+
+        <section class="form-section">
+            <div class="form-container">
+                <img src="{% static 'static_files/img/signup.jpg' %}" class="form-img" alt="">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h1 class="form-heading">Welcome back login here</h1>
+                            <div type="text" id="id_username">
+                                {{ form.username }}
+                            </div>
+                            <div type="password" id="id_password">
+                                {{ form.password }}
+                            </div>
+                            <span class="error">**this is an error</span>
+
+                            <button class="submit-btn">login</button>
+
+                        <a href="{% url 'registration' %}" class="other-form-link">Don't have an account? Create One</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+{% endblock %}

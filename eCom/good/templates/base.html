@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'static_files/css/product.css' %}">
     <link rel="stylesheet" href="{% static 'static_files/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'static_files/css/search-listing.css' %}">
+    <link rel="stylesheet" href="{% static 'static_files/css/sign_up.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -27,12 +28,20 @@
             </div>
             <div class="user">
                 <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
+                <div class="user-icon-popup">
+                    {% if user.is_authenticated %}
+                        <p>Hello {{ request.user.username }}</p>
+                        <a href="{% url 'logout' %}">logout</a>
+                    {% else %}
+                        <p>login to your account</p>
+                        <a href="{% url 'login' %}">login</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>
 
     <script src="{% static 'static_files/js/home.js' %}"></script>
-    <script src="{% static 'static_files/js/product.js' %}"></script>
 
     <div>
         {% block content %}

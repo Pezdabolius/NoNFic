@@ -27,7 +27,7 @@
 .product-card{
     width: 30%;
     margin: 20px 0;
-    border: 40px solid #fff;
+    border: 20px solid #fff;
 }
 
 .section-sort{
@@ -40,7 +40,7 @@
 .product-price{
     position: absolute;
     font-family: 'lato', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     left: 50%;
     transform: translate(-50%, 40%);
     color: black;

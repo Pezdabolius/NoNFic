@@ -1,0 +1,40 @@
+{% extends 'base_account.html' %}
+{% load static %}
+
+{% block title %}Sing-in{% endblock %}
+
+{% block content %}
+
+    <section class="form-section">
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form">
+                     <h1 class="form-heading">New here, sign up here</h1>
+                    <div type="text" id="id_username">
+                        {{ form.username }}
+                    </div>
+                    <div type="email" id="id_email">
+                        {{ form.email }}
+                    </div>
+                    <div type="password" id="id_password">
+                        {{ form.password }}
+                    </div>
+                    <div type="password" id="id_rep_password">
+                        {{ form.rep_password }}
+                    </div>
+
+                    <div type="checkbox" id="id_conditions">
+                        {{ form.conditions }}
+                    </div>
+                    <label for='id_conditions' class="tc-text">You agree to out terms and conditions.<a href="#">Read more</a></label>
+
+                    <button class="submit-btn">sing up</button>
+                    <a href="{% url 'login' %}" class="other-form-link">Already have an account. Log in here</a>
+                </div>
+            </form>
+            <img src="{% static 'static_files/img/signup.jpg' %}" class="form-img" alt="">
+        </div>
+    </section>
+
+{% endblock %}

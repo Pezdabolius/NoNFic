@@ -5,17 +5,39 @@
 
 {% block content %}
 
-    <header class="header-detail"></header>
+    <nav class="navbar bg">
+        <ul class="links-container">
+            <li class="link-item"><a href="{% url 'home' %}" class="link active">Home</a></li>
+            <li class="link-item"><a href="{% url 'products_list' %}" class="link">Shop</a></li>
+            <li class="link-item"><h1 class="header-heading"><span>Non</span>Fic</h1></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="cart">
+                <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <a href="{% url 'login' %}">
+                    <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <section class="product-section">
         <img src="{{ product.image.url }}" class="product-image" alt="">
         <div class="product-detail">
             <h1 class="product-title">{{ product.name }}</h1>
             {% if product.information %}
-                <p class="product-inf">
-                    Book info:
-                    <p>{{ product.information }}<p>
-                </p>
+                <div class="collapsible">
+                    <input type="checkbox" id="collapsible-head">
+                    <label for="collapsible-head">Book info</label>
+                    <div class="collapsible-text">
+                        <p>{{ product.information }}</p>
+                    </div>
+                </div>
             {% endif %}
             <p class="price">${{ product.price }}</p>
             <div class="btn-container">

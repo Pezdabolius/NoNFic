@@ -23,11 +23,13 @@
 
 .product-image{
     width: 45%;
+    margin-top: 70px;
     object-fit: cover;
 }
 
 .product-title{
     font-size: 50px;
+    margin-top: 100px;
 }
 
 .product-inf{
@@ -38,26 +40,59 @@
     line-height: 30px;
 }
 
-.ratings{
-    display: flex;
+.collapsible{
+    max-width: 450px;
+    overflow: hidden;
 }
 
-.ratings .star{
-    width: 30px;
-    height: 30px;
+.collapsible input{
+    display: none;
 }
 
-.rating-count{
+.collapsible label{
+    margin: 10px 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
     font-family: 'lato', sans-serif;
-    opacity: o.4;
-    font-size: 14ps;
-    line-height: 40px;
-    margin-left: 20px;
+    opacity: 0.5;
+    font-size: 25px;
+    line-height: 20px;
+    z-index: 1;
+}
+
+.collapsible label:after{
+    content: '+';
+    margin-left: 300px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.collapsible input:checked + label:after{
+    transform: rotate(90deg);
+}
+
+.collapsible-text{
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top: -100%;
+    transition: all 0.3s ease;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+}
+
+.collapsible input:checked ~ .collapsible-text{
+    max-height: 300px;
+    opacity: 1;
+    top: 0;
 }
 
 .price{
     font-size: 25px;
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 .product-btn{
@@ -99,7 +134,7 @@
     font-family: 'lato', sans-serif;
     line-height: 30px;
     font-size: 20px;
-    opacity: o.5;
+    opacity: 0.5;
 }
 
 .add-review-section{
@@ -124,7 +159,7 @@
     padding: 10px;
     line-height: 40px;
     font-family: 'lato', sans-serif;
-    color: #000
+    color: #000;
     outline: none;
     text-transform: capitalize;
 }

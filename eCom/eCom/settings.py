@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'good.apps.GoodConfig',
     'user.apps.UserConfig',
+    'cart.apps.CartConfig',
     'rest_framework',
     'rest_framework.authtoken'
 ]
@@ -139,3 +140,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CART_SESSION_ID = 'cart'

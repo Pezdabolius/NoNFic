@@ -1,0 +1,41 @@
+{% extends 'base_cart.html' %}
+{% load static %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+    <div class="cart-section">
+        <div class="product-list">
+            <p class="section-heading-cart">your card</p>
+            <div class="cart-container">
+                <!-- <img src="{% static 'static_files/img/empty-cart.png' %}" class="empty-img"> -->
+                {% for item in cart %}
+                    {% with product=item.product %}
+                        <div class="sm-product">
+                            <img src="{{ product.image.url }}" class="sm-product-img">
+                            <div class="sm-text">
+                                <p class="sm-product-name">{{ product.name }}</p>
+                                <p class="sm-des">short des</p>
+                            </div>
+                            <div class="item-counter">
+                                <button class="counter-btn decrement">-</button>
+                                <p class="item-count">{{ item.quantity }}</p>
+                                <button class="counter-btn increment">+</button>
+                            </div>
+                            <p class="sm-price">{{ item.total_price }}</p>
+                            <button class="sm-delete-btn"><img src="{% static 'static_files/img/delete.png' %}"</button>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="checkout-section">
+            <p class="section-heading-bill">your total bill</p>
+            <div class="checkout-box">
+                <h1 class="bill">${{ cart.get_total_price }}</h1>
+                <a href="/checkout" class="checkout-btn">checkout</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

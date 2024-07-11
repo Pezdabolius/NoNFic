@@ -22,7 +22,9 @@
         </ul>
         <div class="user-interactions">
             <div class="cart">
-                <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
+                <a href="{% url 'cart' %}">
+                    <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
+                </a>
                 <span class="cart-item-count">00</span>
             </div>
             <div class="user">

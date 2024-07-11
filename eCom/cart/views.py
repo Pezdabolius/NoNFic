@@ -19,12 +19,10 @@ def add_cart(request, slug):
     form = CartAddForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        cart.add(product=product, quantity=cd['quantity'],
-                 update_quantity=cd['update'])
-    return redirect('cart')
+        cart.add(product=product, update_quantity=cd['update'])
+    return redirect('products_list')
 
 
-@require_POST
 def remove_cart(request, slug):
     cart = Cart(request)
     product = get_object_or_404(Product, slug=slug)

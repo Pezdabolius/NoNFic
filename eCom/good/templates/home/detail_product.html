@@ -20,11 +20,11 @@
             {% endif %}
             <p class="price">${{ product.price }}</p>
             <div class="btn-container">
-                <button class="product-btn buy-btn">Buy now</button>
-                <form method="post">
+                <form method="post" action="{% url 'add_cart' product.slug %}">
+                    <button class="product-btn buy-btn">Buy now</button>
+                    {{ cart }}
                     {% csrf_token %}
-                    {{ cart_form }}
-                    <input type="submit" class="product-btn cart-btn" value="Add to cart">
+                    <button class="product-btn cart-btn">Add to cart</button>
                 </form>
             </div>
         </div>

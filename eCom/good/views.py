@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ReviewForm
 from .models import Product, Category, Review
-from cart.forms import CartAddForm
+from cart.forms import CartQuantityForm
 
 
 def best_selling(request):
@@ -26,7 +26,7 @@ def products_list(request, slug=None):
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, available=True)
-    cart = CartAddForm()
+    cart = CartQuantityForm()
     reviews = Review.objects.filter(product=product).all()[:3]
     if request.method == 'POST':
         user = get_object_or_404(User, id=request.user.id)

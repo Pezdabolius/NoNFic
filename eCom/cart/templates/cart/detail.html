@@ -16,13 +16,19 @@
                                 <p class="sm-product-name">{{ product.name }}</p>
                             </div>
                             <div class="item-counter">
-                                <button class="counter-btn decrement">-</button>
+                                <form method="post" action="{% url 'remove_cart' product.slug %}">
+                                    {% csrf_token %}
+                                    <button class="counter-btn decrement">-</button>
+                                </form>
                                 <p class="item-count">{{ item.quantity }}</p>
-                                <button class="counter-btn increment">+</button>
+                                <form method="post" action="{% url 'add_cart' product.slug %}">
+                                    {% csrf_token %}
+                                    <button class="counter-btn increment">+</button>
+                                </form>
                             </div>
                             <p class="sm-price">${{ item.total_price }}</p>
                             <button class="sm-delete-btn">
-                                <a href="{% url 'remove_cart' product.slug %}"><img src="{% static 'static_files/img/delete.png' %}"></a>
+                                <a href="{% url 'delete_cart' product.slug %}"><img src="{% static 'static_files/img/delete.png' %}"></a>
                             </button>
                         </div>
                     {% endwith %}

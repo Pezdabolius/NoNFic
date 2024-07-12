@@ -25,10 +25,22 @@ class Cart:
         if update_quantity:
             self.cart[product_id]['quantity'] = quantity
         else:
-            self.cart[product_id]['quantity'] += quantity
+            if self.cart[product_id]['quantity'] <= 3:
+                self.cart[product_id]['quantity'] += quantity
+            else:
+                self.cart[product_id]['quantity'] = quantity
         self.save()
 
-    def remove(self, product):
+    def remove(self, product, quantity=1, update_quantity=False):
+        product_id = str(product.id)
+        if product_id in self.cart:
+            if self.cart[product_id]['quantity'] > quantity:
+                self.cart[product_id]['quantity'] -= quantity
+            else:
+                del self.cart[product_id]
+            self.save()
+
+    def delete(self, product):
         product_id = str(product.id)
         if product_id in self.cart:
             del self.cart[product_id]

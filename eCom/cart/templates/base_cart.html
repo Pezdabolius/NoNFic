@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar bg">
         <ul class="links-container">
             <li class="link-item"><a href="{% url 'home' %}" class="link active">Home</a></li>
             <li class="link-item"><a href="{% url 'products_list' %}" class="link">Shop</a></li>
@@ -22,7 +22,15 @@
         <div class="user-interactions">
             <div class="cart">
                 <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
-                <span class="cart-item-count">00</span>
+                <span class="cart-item-count">
+                    {% if 0 < cart|length < 10 %}
+                        {{ cart|length }}
+                    {% elif 10 < cart|length < 100 %}
+                        {{ cart|length }}
+                    {% else %}
+                        00
+                    {% endif %}
+                </span>
             </div>
             <div class="user">
                 <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
@@ -40,7 +48,6 @@
     </nav>
 
     <script src="{% static 'static_files/js/home.js' %}"></script>
-    <script src="{% static 'static_files/js/cart.js' %}"></script>
 
     <div>
         {% block content %}

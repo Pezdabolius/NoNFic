@@ -30,10 +30,26 @@
         </div>
     </section>
 
-    <section class="detail-des">
-        <h1 class="title-des">Introduction</h1>
-        <p class="des">{{ product.description }}</p>
-    </section>
+        <section class="detail-des">
+            <h1 class="title-des">Introduction</h1>
+            <p class="des">{{ product.description }}</p>
+        </section>
+
+    {% if sim_products %}
+        <section class="sim_product">
+            <h1 class="sim_title">Similar books</h1>
+            <div class="product-container">
+                {% for product in sim_products %}
+                <div class="product-card">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.image.url }}" class="product-img" alt="">
+                            <p class="product-name">{{ product.name }}</p>
+                        </a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 
     {% if reviews %}
         <section class="review-section">

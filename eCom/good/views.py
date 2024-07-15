@@ -12,20 +12,14 @@ def best_selling(request):
 
 
 def products_list(request, slug=None):
-    category = None
-    categories = Category.objects.all()
     products = Product.objects.filter(available=True)
-    if slug:
-        category = get_object_or_404(Category, slug=slug)
-        products = products.filter(category=category)
     return render(request, 'home/list_products.html',
-           {'category': category,
-            'categories': categories,
-            'products': products})
+           {'products': products})
 
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, available=True)
+    sim_products = Product.objects.filter(category=product.category).exclude(id=product.id)
     cart = CartQuantityForm()
     reviews = Review.objects.filter(product=product).all()[:3]
     if request.method == 'POST':
@@ -40,4 +34,4 @@ def product_detail(request, slug):
     else:
         form = ReviewForm()
     return render(request, 'home/detail_product.html', {'product': product, 'reviews': reviews,
-                                                        'form': form, 'cart': cart})
+                                                        'form': form, 'cart': cart, 'sim_products': sim_products})

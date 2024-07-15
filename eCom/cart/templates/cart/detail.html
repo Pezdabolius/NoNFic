@@ -8,31 +8,35 @@
         <div class="product-list">
             <p class="section-heading-cart">your card</p>
             <div class="cart-container">
-                {% for item in cart %}
-                    {% with product=item.product %}
-                        <div class="sm-product">
-                            <img src="{{ product.image.url }}" class="sm-product-img">
-                            <div class="sm-text">
-                                <p class="sm-product-name">{{ product.name }}</p>
+                {% if cart %}
+                    {% for item in cart %}
+                        {% with product=item.product %}
+                            <div class="sm-product">
+                                <img src="{{ product.image.url }}" class="sm-product-img">
+                                <div class="sm-text">
+                                    <p class="sm-product-name">{{ product.name }}</p>
+                                </div>
+                                <div class="item-counter">
+                                    <form method="post" action="{% url 'remove_cart' product.slug %}">
+                                        {% csrf_token %}
+                                        <button class="counter-btn decrement">-</button>
+                                    </form>
+                                    <p class="item-count">{{ item.quantity }}</p>
+                                    <form method="post" action="{% url 'add_cart' product.slug %}">
+                                        {% csrf_token %}
+                                        <button class="counter-btn increment">+</button>
+                                    </form>
+                                </div>
+                                <p class="sm-price">${{ item.total_price }}</p>
+                                <button class="sm-delete-btn">
+                                    <a href="{% url 'delete_cart' product.slug %}"><img src="{% static 'static_files/img/delete.png' %}"></a>
+                                </button>
                             </div>
-                            <div class="item-counter">
-                                <form method="post" action="{% url 'remove_cart' product.slug %}">
-                                    {% csrf_token %}
-                                    <button class="counter-btn decrement">-</button>
-                                </form>
-                                <p class="item-count">{{ item.quantity }}</p>
-                                <form method="post" action="{% url 'add_cart' product.slug %}">
-                                    {% csrf_token %}
-                                    <button class="counter-btn increment">+</button>
-                                </form>
-                            </div>
-                            <p class="sm-price">${{ item.total_price }}</p>
-                            <button class="sm-delete-btn">
-                                <a href="{% url 'delete_cart' product.slug %}"><img src="{% static 'static_files/img/delete.png' %}"></a>
-                            </button>
-                        </div>
-                    {% endwith %}
-                {% endfor %}
+                        {% endwith %}
+                    {% endfor %}
+                {% else %}
+                    <img src="{% static 'static_files/img/empty-cart.png' %}" class="empty-img">
+                {% endif %}
             </div>
         </div>
 

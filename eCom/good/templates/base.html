@@ -25,7 +25,15 @@
                 <a href="{% url 'cart' %}">
                     <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
                 </a>
-                <span class="cart-item-count">00</span>
+                <span class="cart-item-count">
+                    {% if 0 < cart|length < 10 %}
+                        {{ cart|length }}
+                    {% elif 10 < cart|length < 100 %}
+                        {{ cart|length }}
+                    {% else %}
+                        00
+                    {% endif %}
+                </span>
             </div>
             <div class="user">
                 <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
@@ -43,7 +51,6 @@
     </nav>
 
     <script src="{% static 'static_files/js/home.js' %}"></script>
-    <script src="{% static 'static_files/js/cart.js' %}"></script>
 
     <div>
         {% block content %}

@@ -16,3 +16,15 @@ let userIcon = document.querySelector('.user-icon');
 let userPopupIcon = document.querySelector('.user-icon-popup');
 
 userIcon.addEventListener('click', () => userPopupIcon.classList.toggle('active'))
+
+$('add_cart').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: $(this).attr('method'),
+        url: '{% url \'add_cart\' %}',
+        data: $(this).serialize(),
+        success: function (response) {
+            console.log(response);
+        }
+    });
+});

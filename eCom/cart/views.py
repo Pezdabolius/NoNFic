@@ -2,7 +2,8 @@ from django.views.decorators.http import require_POST
 from django.shortcuts import render, get_object_or_404, redirect
 from good.models import Product
 from django.shortcuts import render
-from .forms import CartQuantityForm
+from .forms import CartQuantityForm, OrderForm
+from .models import CartOrder
 from .cart import Cart
 
 
@@ -41,3 +42,21 @@ def delete_cart(request, slug):
     product = get_object_or_404(Product, slug=slug)
     cart.delete(product=product)
     return redirect('cart')
+
+
+def order(request):
+    cart = Cart(request)
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save()
+            for item in cart:
+                CartOrder.objects.create(
+                    order=order, product=item['product'],
+                    price=item['price'], quantity=item['quantity']
+                )
+            cart.clear()
+            return redirect('home')
+    else:
+        form = OrderForm()
+    return render(request, 'order/checkout.html', {'form': form, 'cart': cart})

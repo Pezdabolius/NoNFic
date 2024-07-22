@@ -1,0 +1,51 @@
+{% extends 'base_cart.html' %}
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form">
+            <h1 class="heading">Customer details</h1>
+            <div type="text">{{ form.first_name}}</div>
+            <div type="text">{{ form.last_name}}</div>
+            <div type="email">{{ form.email}}</div>
+            <div class="three-input-container">
+                <div type="text">{{ form.country }}</div>
+                <div type="text">{{ form.city }}</div>
+                <div type="text">{{ form.address }}</div>
+            </div>
+            <div type="text">{{ form.postal_code }}</div>
+        </div>
+
+        <div class="cart-section">
+            <div class="product-list">
+                <p class="section-heading-cart">your card</p>
+                <div class="cart-container">
+                    {% for item in cart %}
+                        {% with product=item.product %}
+                            <div class="sm-product">
+                                <img src="{{ product.image.url }}" class="sm-product-img">
+                                <div class="sm-text">
+                                    <p class="sm-product-name">{{ product.name }}</p>
+                                </div>
+                                <div class="item-counter">
+                                    <p class="item-count">{{ item.quantity }}</p>
+                                </div>
+                                <p class="sm-price">${{ item.total_price }}</p>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <p class="section-heading-bill">your total bill</p>
+                <div class="checkout-box">
+                    <h1 class="bill">${{ cart.get_total_price }}</h1>
+                    <button class="place-order-btn">place order</button>
+                </div>
+            </div>
+    </form>
+{% endblock %}

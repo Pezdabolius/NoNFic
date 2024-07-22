@@ -44,7 +44,7 @@
             <p class="section-heading-bill">your total bill</p>
             <div class="checkout-box">
                 <h1 class="bill">${{ cart.get_total_price }}</h1>
-                <a href="/checkout" class="checkout-btn">checkout</a>
+                <a href="{% url 'checkout' %}" class="checkout-btn">checkout</a>
             </div>
         </div>
     </div>

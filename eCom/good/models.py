@@ -31,6 +31,8 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     image = models.ImageField()
+    count_reviews = models.PositiveIntegerField(default=0, blank=True)
+    count_sold = models.PositiveIntegerField(default=0, blank=True)
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 

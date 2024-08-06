@@ -1,17 +1,17 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ReviewForm
-from .models import Product, Category, Review
+from .models import Product, Review
 from cart.forms import CartQuantityForm
 
 
 def best_selling(request):
-    products = Product.objects.filter(available=True)[:6]
+    products = Product.objects.filter(available=True).order_by('-count_sold')[:6]
     return render(request, 'home/home.html',
                   {'products': products})
 
 
-def products_list(request, slug=None):
+def products_list(request):
     products = Product.objects.filter(available=True)
     return render(request, 'home/list_products.html',
            {'products': products})
@@ -29,6 +29,8 @@ def product_detail(request, slug):
             review = form.save(commit=False)
             review.user = user
             review.product = product
+            product.count_reviews += 1
+            product.save()
             review.save()
             return redirect(product.get_absolute_url())
     else:

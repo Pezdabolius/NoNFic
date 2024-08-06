@@ -55,6 +55,9 @@ def order(request):
                     order=order, product=item['product'],
                     price=item['price'], quantity=item['quantity']
                 )
+                product = item['product']
+                product.count_sold += item['quantity']
+                product.save()
             cart.clear()
             return redirect('home')
     else:

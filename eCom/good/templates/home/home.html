@@ -1,27 +1,32 @@
 {% extends 'base.html' %}
+{% load cache %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
     <!-- header -->
-    <header class="header-home"></header>
+    {% cache 900 home %}
+        <header class="header-home"></header>
+    {% endcache %}
 
     <!-- the best selling products-->
-    <section class="best-selling-product-section">
-        <h1 class="section-title">Best selling books</h1>
-        <div class="product-container">
-            {% for product in products %}
-            <div class="product-card">
-                    <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.image.url }}" class="product-img" alt="">
-                        <p class="product-name">{{ product.name }}</p>
-                    </a>
-            </div>
-            {% endfor %}
+    {% cache 300 best_selling %}
+        <section class="best-selling-product-section">
+            <h1 class="section-title">Best selling books</h1>
+            <div class="product-container">
+                {% for product in products %}
+                <div class="product-card">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.image.url }}" class="product-img" alt="">
+                            <p class="product-name">{{ product.name }}</p>
+                        </a>
+                </div>
+                {% endfor %}
 
-            <div class="btn-container">
-                <a href="{% url 'products_list' %}"><button class="shop-btn">More books!</button></a>
+                <div class="btn-container">
+                    <a href="{% url 'products_list' %}"><button class="shop-btn">More books!</button></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endcache %}
 {% endblock %}

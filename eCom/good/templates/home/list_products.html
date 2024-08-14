@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+{% load cache %}
 
 {% block title %}Shop{% endblock %}
 
 {% block content %}
-
-    <header class="header-list"></header>
+    {% cache 900 list %}
+        <header class="header-list"></header>
+    {% endcache %}
 
     <section class="search-listing">
+        {% cache 300 search_listing %}
             <h1 class="section-sort">Reading is Magic!</h1>
             <div class="product-container">
                 {% for product in products %}
@@ -19,5 +22,6 @@
                 </div>
                 {% endfor %}
             </div>
+        {% endcache %}
     </section>
 {% endblock %}

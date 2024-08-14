@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ReviewForm
 from .models import Product, Review
 from cart.forms import CartQuantityForm
+from django.core.cache import cache
 
 
 def best_selling(request):
@@ -18,10 +19,19 @@ def products_list(request):
 
 
 def product_detail(request, slug):
-    product = get_object_or_404(Product, slug=slug, available=True)
-    sim_products = Product.objects.filter(category=product.category).exclude(id=product.id)
+    context = cache.get(f"product_detail_{slug}")
+    if context is None:
+        product = get_object_or_404(Product, slug=slug, available=True)
+        sim_products = Product.objects.filter(category=product.category).exclude(id=product.id)
+        reviews = Review.objects.filter(product=product).all()[:3]
+
+        context = {
+            'product': product,
+            'sim_products': sim_products,
+            'reviews': reviews,
+        }
+        cache.set(f"product_detail_{slug}", context, timeout=900)
     cart = CartQuantityForm()
-    reviews = Review.objects.filter(product=product).all()[:3]
     if request.method == 'POST':
         user = get_object_or_404(User, id=request.user.id)
         form = ReviewForm(request.POST)
@@ -35,5 +45,5 @@ def product_detail(request, slug):
             return redirect(product.get_absolute_url())
     else:
         form = ReviewForm()
-    return render(request, 'home/detail_product.html', {'product': product, 'reviews': reviews,
-                                                        'form': form, 'cart': cart, 'sim_products': sim_products})
+    return render(request, 'home/detail_product.html',
+                  {**context, 'form': form, 'cart': cart})

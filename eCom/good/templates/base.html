@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load cache %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,13 +14,15 @@
 </head>
 <body>
     <nav class="navbar">
-        <ul class="links-container">
-            <li class="link-item"><a href="{% url 'home' %}" class="link active">Home</a></li>
-            <li class="link-item"><a href="{% url 'products_list' %}" class="link">Shop</a></li>
-            <li class="link-item"><h1 class="header-heading"><span>Non</span>Fic</h1></li>
-            <li class="link-item"><a href="#" class="link">About</a></li>
-            <li class="link-item"><a href="#" class="link">Contact</a></li>
-        </ul>
+        {% cache 900 links_cache %}
+            <ul class="links-container">
+                <li class="link-item"><a href="{% url 'home' %}" class="link active">Home</a></li>
+                <li class="link-item"><a href="{% url 'products_list' %}" class="link">Shop</a></li>
+                <li class="link-item"><h1 class="header-heading"><span>Non</span>Fic</h1></li>
+                <li class="link-item"><a href="#" class="link">About</a></li>
+                <li class="link-item"><a href="#" class="link">Contact</a></li>
+            </ul>
+        {% endcache %}
         <div class="user-interactions">
             <div class="cart">
                 <a href="{% url 'cart' %}">
@@ -39,7 +42,9 @@
                 <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
                 <div class="user-icon-popup">
                     {% if user.is_authenticated %}
-                        <p>Hello {{ request.user.username }}</p>
+                        {% cache 900 username request.user.id %}
+                            <p>Hello {{ request.user.username }}</p>
+                        {% endcache %}
                         <a href="{% url 'logout' %}">logout</a>
                     {% else %}
                         <p>login to your account</p>

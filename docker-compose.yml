@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql_data
+  redis:
+    image: redis:latest
+    ports:
+      - '6379:6379'
+
+volumes:
+  postgres_data:

@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'eCom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('POSTGRES_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.getenv('POSTGRES_NAME', os.path.join(BASE_DIR, 'db.sqlite3')),
+        'NAME': os.getenv('POSTGRES_DB', os.path.join(BASE_DIR, 'db.sqlite3')),
         'USER': os.getenv('POSTGRES_USER', 'user'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),
         'HOST': os.getenv('POSTGRES_HOST', '127.0.0.1'),
@@ -159,9 +159,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static', 'static_files'),
+    os.path.join(BASE_DIR / 'static'),
 )
 
 # STRIPE_PUBLIC_KEY = ''
@@ -169,7 +169,7 @@ STATICFILES_DIRS = (
 # STRIPE_WEBHOOK_KEY = ''
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

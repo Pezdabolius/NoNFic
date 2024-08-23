@@ -29,13 +29,13 @@
                                 </div>
                                 <p class="sm-price">${{ item.total_price }}</p>
                                 <button class="sm-delete-btn">
-                                    <a href="{% url 'delete_cart' product.slug %}"><img src="{% static 'static_files/img/delete.png' %}"></a>
+                                    <a href="{% url 'delete_cart' product.slug %}"><img src="{% static 'img/delete.png' %}"></a>
                                 </button>
                             </div>
                         {% endwith %}
                     {% endfor %}
                 {% else %}
-                    <img src="{% static 'static_files/img/empty-cart.png' %}" class="empty-img">
+                    <img src="{% static 'img/empty-cart.png' %}" class="empty-img">
                 {% endif %}
             </div>
         </div>

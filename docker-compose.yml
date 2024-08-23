@@ -1,13 +1,34 @@
-version: '3.9'
+version: '3.10'
 
 services:
   db:
     image: postgres:latest
     container_name: postgres
+    ports:
+      - '5432:5432'
+    depends_on:
+      - redis
     env_file:
       - .env
     volumes:
       - postgres_data:/var/lib/postgresql_data
+
+  webapp:
+    build:
+      context: .
+    container_name: web
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - .env
+    command: python manage.py runserver 0.0.0.0:8000
+
+
   redis:
     image: redis:latest
     ports:
@@ -15,3 +36,5 @@ services:
 
 volumes:
   postgres_data:
+  static_volume:
+  media_volume:

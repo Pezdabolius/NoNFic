@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'static_files/css/product.css' %}">
-    <link rel="stylesheet" href="{% static 'static_files/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'static_files/css/search-listing.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search-listing.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         <div class="user-interactions">
             <div class="cart">
                 <a href="{% url 'cart' %}">
-                    <img src="{% static 'static_files/img/cart.png' %}" class="cart-icon" alt="">
+                    <img src="{% static 'img/cart.png' %}" class="cart-icon" alt="">
                 </a>
                 <span class="cart-item-count">
                     {% if 0 < cart|length < 10 %}
@@ -39,7 +39,7 @@
                 </span>
             </div>
             <div class="user">
-                <img src="{% static 'static_files/img/user.png' %}" class="user-icon" alt="">
+                <img src="{% static 'img/user.png' %}" class="user-icon" alt="">
                 <div class="user-icon-popup">
                     {% if user.is_authenticated %}
                         {% cache 900 username request.user.id %}
@@ -55,7 +55,7 @@
         </div>
     </nav>
 
-    <script src="{% static 'static_files/js/home.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 
     <div>
         {% block content %}

@@ -1,0 +1,504 @@
+[{
+  "model": "good.category",
+  "pk": 1,
+  "fields": {
+    "name": "Fantasy",
+    "slug": "fantasy"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 2,
+  "fields": {
+    "name": "Romance",
+    "slug": "romance"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 3,
+  "fields": {
+    "name": "Comedy",
+    "slug": "comedy"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 4,
+  "fields": {
+    "name": "Slice of Life",
+    "slug": "slice-of-life"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 5,
+  "fields": {
+    "name": "Adventure",
+    "slug": "adventure"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 6,
+  "fields": {
+    "name": "Sci-Fi",
+    "slug": "sci-fi"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 7,
+  "fields": {
+    "name": "Drama",
+    "slug": "drama"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 8,
+  "fields": {
+    "name": "Dark",
+    "slug": "dark"
+  }
+},
+{
+  "model": "good.category",
+  "pk": 9,
+  "fields": {
+    "name": "Сollection of stories",
+    "slug": "collection-of-stories"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 1,
+  "fields": {
+    "category": 6,
+    "name": "Prey",
+    "slug": "prey",
+    "information": "1 volume, 1 color cover, 348 pages. Soft touch lamination (touch like velvet!). Individual thermal protection and bookmarks-lasse.",
+    "description": "After a mirror portal field trip being conducted by Luna goes terribly wrong, Ocellus finds herself trapped in a strange palace far from home. That palace, once abandoned, is now infested with a hive of love-starved changelings intent on using her only way home as a means to invade her world.\r\n\r\nOtherwise, Ocellus appears to be alone.\r\n\r\nAt first.",
+    "available": true,
+    "price": "30.00",
+    "image": "book1.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-13T10:12:28.017Z",
+    "update": "2024-06-24T10:53:02.745Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "The Enchanted Kingdom",
+    "slug": "the-enchanted-kingdom",
+    "information": "2 volumes, 2 color covers, 344 and 328pages. Soft touch lamination (touch like velvet!). Individual thermal protection and bookmarks-lasse.",
+    "description": "It's easy to think about fairytales when you’re an ancient alicorn trapped in a library for centuries on end. It's easy to wonder how one would go about rescuing you, to think and devise and plot out how to free you in a blaze of glory, intrigue, adventure, and romance.\r\n\r\nOr, rather, it’s easy until suddenly it happens and you’re forced to ask yourself the one terrifying question you’d yet to consider.\r\n\r\nNow what?",
+    "available": true,
+    "price": "60.00",
+    "image": "book2.webp",
+    "count_reviews": 0,
+    "count_sold": 2,
+    "create": "2024-05-13T10:48:51.371Z",
+    "update": "2024-08-14T07:46:54.990Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 3,
+  "fields": {
+    "category": 5,
+    "name": "Fallout: Equestria — Heroes",
+    "slug": "fallout-equestria-heroes",
+    "information": "3 volumes, 3 color covers and postcards, 45 black and white illustrations, 456, 508, and 484 pages. Soft touch lamination (touch like velvet!).",
+    "description": "Inspired by the heroics of the mysterious mare known as the Stable Dweller, Silver Storm, a guard of the town of Marefort, decides to go on a daring mission to rescue her captured brother. Of course things rarely go as planned and her attempts at heroism drags her into a tangled web of plots and conspiracies as warring factions vie for control over the last great city: Dise.",
+    "available": true,
+    "price": "90.00",
+    "image": "book3.webp",
+    "count_reviews": 0,
+    "count_sold": 1,
+    "create": "2024-05-13T12:14:22.451Z",
+    "update": "2024-08-14T07:46:55.199Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 4,
+  "fields": {
+    "category": 6,
+    "name": "The Mare Who Once Lived on the moon",
+    "slug": "the-mare-who-once-lived-on-the-moon",
+    "information": "454 pages. Hardcover. Soft touch lamination (touch like velvet!). The lasse bookmark. Protective film.",
+    "description": "In a world of brass and steam, Twilight Sparkle had thought she had made a life-changing discovery with the invention of the telescope. For better or worse, she was correct.\r\n\r\nNow her discovery has not only changed her life, but the lives of those she seeks out in her desperate attempt to contact the only other creature as lonely as Twilight herself.\r\n\r\nIt all would have been much simpler, but it had to be the one Twilight could only call The Mare on the Moon.\r\n\r\nDecidedly not within walking distance, then.",
+    "available": true,
+    "price": "30.00",
+    "image": "book4.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-13T12:16:33.925Z",
+    "update": "2024-06-24T10:57:40.163Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 5,
+  "fields": {
+    "category": 7,
+    "name": "Princess Celestia: The Changeling Queen",
+    "slug": "princess-celestia-the-changeling-queen",
+    "information": "",
+    "description": "At the Royal Wedding, Chrysalis and the Changelings were revealed to all of Equestria.\r\n\r\nBut another mask was torn away that day. A mask born for a thousand years. A mask created on one promise. A mask, that has become synonymous, fused, to its bearer.\r\n\r\nA mask that when ripped off, causes Twilight, her friends and Luna to question everything they ever knew about the one pony, one very important pony.\r\n\r\nAt the Royal Wedding, the meaning of the phrase 'Princess Celestia' changes forever.",
+    "available": true,
+    "price": "30.00",
+    "image": "book5.webp",
+    "count_reviews": 0,
+    "count_sold": 1,
+    "create": "2024-05-13T20:25:28.426Z",
+    "update": "2024-08-14T07:47:30.445Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "name": "University Days & Vinyl Scratch Tapes",
+    "slug": "university-days-vinyl-scratch-tapes",
+    "information": "400 pages, 2 colour illustrations by Forkonatable, hardcover by Ramiras, bookmark-lasse, soft-touch lamination (feels like velvet)",
+    "description": "This book includes two wonderful works – University Days and The Vinyl Scratch Tapes. Inside there are color illustrations from Forkonatable, the cover by Ramiras.\r\n\r\n \r\n\r\nAnnotations:\r\n\r\n \r\n\r\nUniversity Days:\r\n\r\n \r\n\r\nA refined mare fresh out of high school and a dropout following her dreams find themselves forced to spend a lot of time together.\r\n\r\nWith the help of a meddling psychology tutor and their new classmates, can they find what they've been looking for?\r\n\r\n \r\n\r\nThe Vinyl Scratch Tapes:\r\n\r\n \r\n\r\nAfter the invention of radio, DJ-P0n3 (aka Vinyl Scratch) holds the first Equestrian talk show with her co-host Octavia. Octavia quickly finds out her superior is very eccentric, leading their broadcast to be constantly derailed, yet somehow remain popular. These episodes were recorded for historical significance and transcribed. These are the Vinyl Scratch Tapes.",
+    "available": true,
+    "price": "30.00",
+    "image": "book6.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T12:20:27.850Z",
+    "update": "2024-06-24T10:59:53.766Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 7,
+  "fields": {
+    "category": 9,
+    "name": "The Time Loop Trilogy",
+    "slug": "the-time-loop-trilogy",
+    "information": "1 volume, 1 color cover, 428 pages. Soft touch lamination (touch like velvet!).",
+    "description": "Hard Reset\r\n\r\nTwilight isn't having a very good day. An experimental spell blew up in her face, an army of changelings is attacking Canterlot, and she just died. Yet somehow, it looks like it's going to keep going downhill from here.Given the chance to correct what's gone wrong, Twilight swears she's going to fix all this even if it kills her. Which it will. Frequently.\r\n\r\n \r\n\r\nA Stitch in Time\r\n\r\nAfter the events of Hard Reset Twilight's life and mental well being are slowly returning to normal. Her recovery is cut short, though, when a letter arrives informing her that the time loop spell she cast is causing severe damage to space and time itself. In over her head, Twilight tries to summon anypony who will know how to fix it. The pony she gets is the last one she ever thought she would meet... and nothing like she expected him to be.\r\n\r\n \r\n\r\nYou Can Fight Fate\r\n\r\nHaving discovered the message left for her by Star Swirl the Bearded in the distant past, Twilight once again finds her",
+    "available": true,
+    "price": "30.00",
+    "image": "book7.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T12:30:26.273Z",
+    "update": "2024-06-24T10:57:57.418Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 8,
+  "fields": {
+    "category": 4,
+    "name": "Long Road to Friendship",
+    "slug": "long-road-to-friendship",
+    "information": "680 pages, 15 colorfull iilustrations",
+    "description": "After putting on the Element of Magic, Sunset Shimmer was shown just how much of a monster she really is. But that wasn't all the Elements did to her.\r\n\r\nSunset has now been forced to serve penance by answering any question truthfully and by doing anything asked of her, whether she wants to or not.\r\n\r\nAnd she really doesn't want to.\r\n\r\nUntil all of the hatred in her heart is gone, Sunset is at the whim of her peers, unbeknownst to them of course. Can her new \"friends\" help her down the road to redemption?\r\n\r\nIf not, there's always that other Twilight Sparkle she keeps running into.",
+    "available": true,
+    "price": "30.00",
+    "image": "book8.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:46:18.205Z",
+    "update": "2024-06-24T10:52:18.825Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 9,
+  "fields": {
+    "category": 8,
+    "name": "Stardust",
+    "slug": "stardust",
+    "information": "584 pages, hardcover, ribbon, heat seal packaging.",
+    "description": "Isolated from her friends and taken prisoner in the middle of a war, Twilight must deal with the very real dangers of being percieved as an enemy as well as the nightmares of her arrival on 'Earth'. Can she overcome her own fears and the fears of her captors? Will the wayward unicorn's assistance be a boon or a curse to the 'humans?' Most importantly, will she ever find her way home?\r\n\r\n \r\n\r\n\"In short, it's a story of friendship and plasma rifles, with the emphasis on the friendship. The characters are well written, the XCOM setting is fleshed out very well, and the story is compelling. If you love XCOM, you'll love the story, but even if you've never heard of it, it's more than worth giving the first 3 chapters a read.\r\n\r\nThere's excellent action later on, but the real strength lies in the collision between the friendly and naive world of Twilight Sparkle and the desperate world of humans fighting a losing war for survival and willing to do anything to turn the tide.\"",
+    "available": true,
+    "price": "30.00",
+    "image": "book9.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:47:58.790Z",
+    "update": "2024-06-24T10:54:48.375Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "name": "A Stallion for the Time Being",
+    "slug": "a-stallion-for-the-time-being",
+    "information": "158 pages, hardcover. 28 black and white illustrations. This is small format book -- dimensions: 146x110 mm (5,75x4,33 in). The book was made by hand with a hand tools.",
+    "description": "Minuette is determined to have a nice date with a nice stallion, no matter what that takes.\r\nTwilight Sparkle just wants her to stop wreaking havoc on the time-space continuum.\r\nThings get complicated.",
+    "available": true,
+    "price": "25.00",
+    "image": "book10.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:49:27.684Z",
+    "update": "2024-08-14T07:20:42.677Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Friendship is Optimal",
+    "slug": "friendship-is-optimal",
+    "information": "262 pages, hardcover. This is small format book -- dimensions: 146x110 mm (5,75x4,33 in). The book was made by hand with a hand tools.",
+    "description": "Hanna, the CEO of Hofvarpnir Studios, just won the contract to write the official My Little Pony MMO. Hanna has built an A.I. Princess Celestia and given her one basic drive: to satisfy everybody's values through friendship and ponies. Princess Celestia will satisfy your values through friendship and ponies, and it will be completely consensual.",
+    "available": true,
+    "price": "30.00",
+    "image": "book11.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:50:14.953Z",
+    "update": "2024-06-24T10:51:43.345Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 12,
+  "fields": {
+    "category": 6,
+    "name": "Better Living Through Science and Ponies",
+    "slug": "better-living-through-science-and-ponies",
+    "information": "251 pages, hardcover. 1 b/wh and 1 color illustrations. This is small format book -- dimensions: 146x110 mm (5,75x4,33 in). The book was made by hand with a hand tools.",
+    "description": "GLaDOS is free of Chell, free to continue testing, when she discovers a portal gun Wheatley tried to repair with duct tape. When the portal gun catastrophically fails, the enrichment center, GLaDOS, and Chell are literally dropped in the middle of Equestria. The mute test subject soon finds the world of ponies far more welcoming than the human world. But GLaDOS sees possibilities. Let the testing begin... for science.",
+    "available": true,
+    "price": "30.00",
+    "image": "book12.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:51:07.302Z",
+    "update": "2024-06-24T10:49:08.142Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 13,
+  "fields": {
+    "category": 3,
+    "name": "Why am I Pinkie Pie?!",
+    "slug": "why-am-i-pinkie-pie",
+    "information": "384 pages, hardcover. 28 black and white illustrations. This is small format book -- dimensions: 146x110 mm (5,75x4,33 in). The book was made by hand with a hand tools.",
+    "description": "Okay, I don't know if anyone can hear this, or read this, or whatever, but I'm trying my best to use Pinkie Pie's legendary fourth-wall-breaking powers to try and get a message out.\r\nIf you can hear this, I need help. I'm in Equestria, and man, this is strange. But I'm also stuck in Pinkie Pie's body, for some reason.\r\nYes, it's just as weird as it sounds. And now, I need your help... because all the ponies in this town think I'm crazy!",
+    "available": true,
+    "price": "35.00",
+    "image": "book13.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:51:43.682Z",
+    "update": "2024-06-24T11:00:27.305Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 14,
+  "fields": {
+    "category": 3,
+    "name": "Anthropology",
+    "slug": "anthropology",
+    "information": "Hardcover, 10 colorfull illustrations from Maytee, Asimos, Lexx2dot0, 364 pages.",
+    "description": "Humans.\r\n\r\nTruth or myth? Ancient lost civilization or just an old pony's tale?\r\n\r\nNo pony has ever seen one, and most haven't even heard of them. But Lyra knows that these wonderful creatures are more than just old legends, and she's going to find out... and possibly drive her roommate insane in the process.",
+    "available": true,
+    "price": "40.00",
+    "image": "book14.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:52:26.799Z",
+    "update": "2024-08-14T07:20:42.681Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 15,
+  "fields": {
+    "category": 9,
+    "name": "Two Sides of Melody",
+    "slug": "two-sides-of-melody",
+    "information": "The book has 500 pages and 3 full-color illustrations from Ataxia.",
+    "description": "The collection of stories about the adventures of Octavia Melody and Vinyl Scratch, it includes three stories: Accidental Harmony, Allegrezza and My Roommate is a Vampire.",
+    "available": true,
+    "price": "30.00",
+    "image": "book15.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:53:22.462Z",
+    "update": "2024-06-24T10:59:18.456Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 16,
+  "fields": {
+    "category": 2,
+    "name": "The Enchanted Library",
+    "slug": "the-enchanted-library",
+    "information": "2 volumes, 2 color covers, 20 color illustrations from Maxima, 512 and 472 pages. Soft touch lamination (touch like velvet!).",
+    "description": "Everypony enjoys myths and ponytales, even if they know such things aren't real. Alicorns fighting against a spirit of chaos? An ancient princess trapped in a library under a tree, waiting to be found? Quite enchanting and fantastic tales yes, but nonetheless as fictional as Daring Do and other such stories. At least, that's what Rarity used to think.\r\n\r\nShe doesn't anymore.",
+    "available": true,
+    "price": "90.00",
+    "image": "book16.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T18:54:38.838Z",
+    "update": "2024-06-24T10:57:02.202Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 17,
+  "fields": {
+    "category": 5,
+    "name": "Fallout: Equestria",
+    "slug": "fallout-equestria",
+    "information": "4 volumes, 4 color covers, 50 black and white illustrations, 484, 432, 404 and 436 pages. Soft touch lamination (touch like velvet!).",
+    "description": "Once upon a time, in the magical land of Equestria...\r\n\r\n…there came an era when the ideals of friendship gave way to greed, selfishness, paranoia and a jealous reaping of dwindling space and natural resources. Lands took up arms against their neighbors. The end of the world occurred much as we had predicted -- the world was plunged into an abyss of balefire and dark magic. The details are trivial and pointless. The reasons, as always, purely our own. The world was nearly wiped clean of life. A great cleansing; a magical spark struck by pony hooves quickly raged out of control. Megaspells rained from the skies. Entire lands were swallowed in flames and fell beneath the boiling oceans. Ponykind was almost extinguished, their spirits becoming part of the ambient radiation that blanketed the lands. \r\n\r\n…But it was not, as some had predicted, the end of the world. Instead, the apocalypse was simply the prologue for another bloody chapter in pony history. In the early days, thousands were spared the horrors of the holocaust by taking refuge in enormous underground shelters known as Stables. But when they emerged, they had only the hell of the wastes",
+    "available": true,
+    "price": "120.00",
+    "image": "book17.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:03:34.992Z",
+    "update": "2024-06-24T10:50:15.425Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 18,
+  "fields": {
+    "category": 9,
+    "name": "Tales of the Moon",
+    "slug": "tales-of-the-moon",
+    "information": "Hardcover, 9 color illustrations, 374 pages",
+    "description": "The following stories are included in the Moon book:\r\n\r\n - Tigerhorse – Her Soldiers, We\r\n\r\n - Dragonjek – Music for the Mare in the Moon\r\n\r\n - TheKissoftheVoid – The Nightmare Omen\r\n\r\n - Chuckfinley – Luna, Princess of Space\r\n\r\n - Pearple Prose – Tenebrae\r\n\r\n - Cynewulf – Lunangrad\r\n\r\n - Ponydora Prancypants – Que Sera, Sera\r\n\r\n - Horizon – Thou Goddess & Quiet Boy and Moon Horse",
+    "available": true,
+    "price": "45.00",
+    "image": "book18.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:05:15.059Z",
+    "update": "2024-06-24T10:55:51.965Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 19,
+  "fields": {
+    "category": 9,
+    "name": "Tales of the Sun",
+    "slug": "tales-of-the-sun",
+    "information": "Hardcover, 9 color illustrations, 414 pages",
+    "description": "The following stories are included in the Sun book:\r\n\r\n - Brokenimage321 – Celestia XVII\r\n\r\n - PhantomFox – Sunny Skies All Day Long\r\n\r\n - Skywriter – Princess Celestia Hates Tea\r\n\r\n - Prane – Dune Goddess\r\n\r\n - Horizon – Administrative Angel\r\n\r\n - GhostOfHeraclitus – Whom the Princesses Would Destroy...\r\n\r\n - Miller Minus – Analemma\r\n\r\n - Georg – In Celestia We Trust, All Others Pay Cash\r\n\r\n - Bad Horse – Sisters",
+    "available": true,
+    "price": "45.00",
+    "image": "book19.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:06:47.050Z",
+    "update": "2024-06-24T10:56:10.439Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 20,
+  "fields": {
+    "category": 4,
+    "name": "Background Pony",
+    "slug": "background-pony",
+    "information": "Hardcover, 2 volumes, 20 b/w illustrations from Ramiras, 512 & 648 pages.",
+    "description": "My name is Lyra Heartstrings, and you will not remember me. You won't even remember this conversation. Just like with everypony else I've ever met, everything I do or say will be forgotten. Every letter I've written will appear blank; every piece of evidence I've left behind will end up missing. I'm stuck here in Ponyville because of the same curse that has made me so forgettable. Still, that doesn't stop me from doing the one thing that I love: making music. If my melodies find their way into your heart, then there is still hope for me. If I can't prove that I exist, I can at least prove that my love for each and every one of you exists. Please, listen to my story, my symphony, for it is me.",
+    "available": true,
+    "price": "60.00",
+    "image": "book20.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:08:24.766Z",
+    "update": "2024-06-24T10:45:57.495Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 21,
+  "fields": {
+    "category": 4,
+    "name": "Past Sins",
+    "slug": "past-sins",
+    "information": "Hardcover, 1 book, 24 b/w illustrations from Maytee, Asimos, Lexx2dot0for each chapter, 593 pages",
+    "description": "On a dark night filled with even darker magics, an insane cult attempts to give Nightmare Moon a body and life of her own, utterly separate from Princess Luna. But, when the spell is interrupted by Celestia, something unexpected is created.\r\n\r\nNow, a little black alicorn filly named Nyx finds herself living under the care of Twilight Sparkle, only to be haunted by memories and emotions from her past. Is she Nightmare Moon reborn or is she simply a doppelganger with a soul and mind of her own? Can Twilight Sparkle protect Nyx from those who refuse to see past her dragon eyes and black coat?\r\n\r\nOr, will Nyx be forced to inherit the sins that may not even be hers and become the greatest evil Equestria has ever known?",
+    "available": true,
+    "price": "25.00",
+    "image": "book21.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:08:53.489Z",
+    "update": "2024-06-24T10:52:32.267Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 22,
+  "fields": {
+    "category": 5,
+    "name": "Pink Eyes",
+    "slug": "pink-eyes",
+    "information": "Hardcover, 1 book, 20 b/w illustrations from Maytee, Asimos, Lexx2dot0 for each chapter, 362 pages",
+    "description": "Hope is the faith of the young. Losing everything she holds dear, Puppysmiles embarks on the adventure of her life to find her mother, her hopes of meeting her again driving her through the horrors of a world not of her making. Too bad the Wastelands doesn't care about hope.",
+    "available": true,
+    "price": "30.00",
+    "image": "book22.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:09:24.460Z",
+    "update": "2024-06-24T10:52:41.466Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 23,
+  "fields": {
+    "category": 6,
+    "name": "Empty Horizons",
+    "slug": "empty-horizons",
+    "information": "1 volume, 1 color cover, 528 pages. Soft touch lamination (touch like velvet!). Individual thermal protection and bookmarks-lasse.",
+    "description": "The surface isn't safe anymore.\r\n\r\nIn the ruined depths of Canterlot, a team of brave salvagers discover six mares, long forgotten but miraculously preserved. Though these mares cannot remember what happened to their world, they possess powerful magic that hasn't been seen for centuries.\r\n\r\nNow the Elements of Harmony are thrust headlong into a world beyond recognition. Twilight and her friends must dive into the sunken remains of history to determine what happened, but Equestria isn't the harmonious land it once was. Before they can focus wholly on the past, they may first have to survive the present.\r\n\r\nIt isn't going to be easy.",
+    "available": true,
+    "price": "30.00",
+    "image": "book23.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:10:01.102Z",
+    "update": "2024-06-24T10:48:59.366Z"
+  }
+},
+{
+  "model": "good.product",
+  "pk": 24,
+  "fields": {
+    "category": 5,
+    "name": "Fallout: Equestria – Special Edition",
+    "slug": "fallout-equestria-special-edition",
+    "information": "",
+    "description": "Once upon a time, in the magical land of Equestria...\r\n\r\n…there came an era when the ideals of friendship gave way to greed, selfishness, paranoia and a jealous reaping of dwindling space and natural resources. Lands took up arms against their neighbors. The end of the world occurred much as we had predicted -- the world was plunged into an abyss of balefire and dark magic. The details are trivial and pointless. The reasons, as always, purely our own. The world was nearly wiped clean of life. A great cleansing; a magical spark struck by pony hooves quickly raged out of control. Megaspells rained from the skies. Entire lands were swallowed in flames and fell beneath the boiling oceans. Ponykind was almost extinguished, their spirits becoming part of the ambient radiation that blanketed the lands. \r\n\r\n…But it was not, as some had predicted, the end of the world. Instead, the apocalypse was simply the prologue for another bloody chapter in pony history. In the early days, thousands were spared the horrors of the holocaust by taking refuge in enormous underground shelters known as Stables. But when they emerged, they had only the hell of the wastes",
+    "available": true,
+    "price": "125.00",
+    "image": "book24.webp",
+    "count_reviews": 0,
+    "count_sold": 0,
+    "create": "2024-05-15T19:11:00.356Z",
+    "update": "2024-06-24T10:50:40.745Z"
+  }
+}]

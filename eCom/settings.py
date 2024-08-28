@@ -164,10 +164,6 @@ STATIC_ROOT = 'static'
 #     os.path.join(BASE_DIR / 'static'),
 # )
 
-# STRIPE_PUBLIC_KEY = ''
-# STRIPE_SECRET_KEY = ''
-# STRIPE_WEBHOOK_KEY = ''
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
